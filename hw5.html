@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="container mx-auto">
+    <h1 class="text-center text-red-700">Thời Trang Nam</h1>
+    <div>
+        <div id="card" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        </div>
+    </div>    
+    <script>
+        var array = 
+            [
+                {
+                    id: "1",
+                    img: "https://th.bing.com/th/id/OIP.d00BGh2ETzwN_Yp3IHLTmAHaLG?rs=1&pid=ImgDetMain",
+                    name: "Quần short kaki",
+                    price: "370.000 VND",
+                },
+
+                {
+                    id: "2",
+                    img: "https://th.bing.com/th/id/OIP.kNeB2_pKdW76RZrvW7QYBwHaHa?rs=1&pid=ImgDetMain",
+                    name: "Quần baggy",
+                    price: "398.000 VND",
+                },
+
+                {
+                    id: "3",
+                    img: "https://th.bing.com/th/id/OIP.yhSH7B8l7dhwPBaL03O3MAHaJM?w=204&h=253&c=7&r=0&o=5&pid=1.7",
+                    name: "Quần tây",
+                    price: "300.000 VND",
+                },
+
+                {
+                    id: "4",
+                    img: "https://th.bing.com/th/id/OIP.GZgQ7oOQ5cnBGAdvBtLr_wHaHa?w=204&h=204&c=7&r=0&o=5&pid=1.7",
+                    name: "Quần jeans nam",
+                    price: "300.000 VND",
+                },
+            ];  
+        var card = document.getElementById("card");
+        for(i = 0; i < array.length; i++){
+            card.innerHTML += `
+            <div class="border border-gray-300 p-2 max-w-xs">
+                <img src="${array[i].img}" class="w-full h-64 object-cover">
+                <h3 class="text-center font-semibold">${array[i].name}</h3>
+                <p class="text-center">${array[i].price}</p>
+                <button class="bg-blue-700 text-white py-2 px-4 rounded mt-2 cursor-pointer">Đặt mua</button>
+            </div>
+            `
+        }
+    </script>
+</body>
+</html>

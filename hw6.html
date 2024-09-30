@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="container mx-auto">
+    <h1 class="text-center text-red-700">Thời Trang Nữ</h1>
+    <div>
+        <div id="card" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        </div>
+    </div>    
+    <script>
+        var array = 
+            [
+                {
+                    id: "1",
+                    img: "https://th.bing.com/th/id/OIP.gI7TQrUUAkWtECB0TkbjJwHaHa?w=203&h=203&c=7&r=0&o=5&pid=1.7",
+                    name: "Quần jeans nữ",
+                    code: "KO0002",
+                    price: "370.000 VND",
+                    discount: "269.000 VND",
+                },
+
+                {
+                    id: "2",
+                    img: "https://th.bing.com/th/id/R.337a986f734459cd4220b1a660212e0b?rik=E%2bzoZm73DGu7pA&pid=ImgRaw&r=0",
+                    name: "Áo Khoác nữ",
+                    code: "VN0002",
+                    price: "369.000 VND",
+                    discount: "249.000 VND",
+                },
+
+                {
+                    id: "3",
+                    img: "https://th.bing.com/th/id/OIP.EIkHRentVf24Edq-FHKzswHaHn?rs=1&pid=ImgDetMain",
+                    name: "Áo Phông nữ",
+                    code: "US0002",
+                    price: "360.000 VND",
+                    discount: "159.000 VND",
+                },
+            ];  
+        var card = document.getElementById("card");
+        for(i = 0; i < array.length; i++){
+            card.innerHTML += `
+            <div class="border border-gray-300 p-4">
+                <img src="${array[i].img}" alt="" class="w-full h-64 object-cover">
+                <div class="flex justify-between mt-2">
+                    <h3>${array[i].name}</h3>
+                    <h3>-</h3>
+                    <h3>${array[i].code}</h3>
+                </div>          
+                <div class="flex justify-between mt-2">
+                    <p class="text-red-600 font-bold">${array[i].discount}</p>
+                    <p class="line-through text-gray-500">${array[i].price}</p>
+                </div>
+                <button class="bg-red-600 text-white py-2 px-4 rounded mt-2">Đặt mua</button>
+            </div>
+            `
+        }
+    </script>
+</body>
+</html>
